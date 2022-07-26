@@ -11,7 +11,23 @@ function cacheFunction(cb) {
     // Tips, usá un objeto donde cada propiedad sea un argumento, y el valor el resultado.
     // Aqui tu codigo
 
+    let cache = {};
+
+    return function (x) {
+        if (!cache.hasOwnProperty(x)) {
+            cache[x] = cb(x)
+        }
+        return cache[x]
+    }
 }
+
+const cb = function (x) {
+    return x * 5
+}
+
+let cache = cacheFunction(cb)
+console.log(cache(5))
+
 
 function CadenaInvertida(str) {
     // Instrucción:
@@ -19,8 +35,16 @@ function CadenaInvertida(str) {
     // => 'divoco'
     //cadena inversa('covid')
     // Aqui tu codigo
-
+    if (str === '') {
+        return '';
+    } else {
+        return CadenaInvertida(str.substr(1)) + str.charAt(0);
+    }
 }
+
+console.log(CadenaInvertida('covid'));
+
+
 
 function EnteroMasGrande(array) {
     // Instruction:
@@ -30,14 +54,26 @@ function EnteroMasGrande(array) {
     //maxOf([3, 1, 6, 8, 2, 4, 5])
     // => 8
     //Aqui tu codigo
+    //let array = [3, 1, 6, 8, 2, 4, 5];
+    let max = 0;
+
+    for (i = 0; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        }
+    }
+    return max;
 }
-function Permutaciones(str){
-    
-// Instrucción:
-//Dada una cadena, escriba una función recursiva para imprimir una matriz de todas las permutaciones posibles de la cadena. */// Ejemplos:
-//permutaciones('abc')
-// => ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
-//permutaciones('aabc')
-// => ["aabc", "aacb", "abac", "abca", "acab", "acba", "baac", "baca", "bcaa", "caab", "caba", " cbaa"]
-//Aqui tu codigo
+let maxOf = EnteroMasGrande([3, 1, 6, 8, 2, 4, 5])
+console.log(maxOf)
+
+function Permutaciones(str) {
+
+    // Instrucción:
+    //Dada una cadena, escriba una función recursiva para imprimir una matriz de todas las permutaciones posibles de la cadena. */// Ejemplos:
+    //permutaciones('abc')
+    // => ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+    //permutaciones('aabc')
+    // => ["aabc", "aacb", "abac", "abca", "acab", "acba", "baac", "baca", "bcaa", "caab", "caba", " cbaa"]
+    //Aqui tu codigo
 }

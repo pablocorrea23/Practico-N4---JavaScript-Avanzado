@@ -1,20 +1,32 @@
 Explica los siguentes conceptos con tus propias palabras.
 
 
-1- Scope
+1- Scope: 
+es el lugar donde va a vivir la variable, determina la accesibilidad de las 
+variables en cada parte de nuestro codigo.
 
-2- Tipos de datos
+2- Tipos de datos:
+Javascript es de tipado dinamico. Hay dtaos primitivos: string, boolean, null, undefined, number, objeto.
 
-3- Operadores
 
-4- Coercion
+3- Operadores:
+Son funciones simples. el operador "+" para que opere como suma los valores ambos deben ser números. En el caso de que uno de ellos sea un string, el operador será de concatenación.
 
-5- Precedencia
+4- Coercion:
+forzar a un objeto para que se comporte como si fuera de otro tipo.
 
-6- Bind
+5- Precedencia:
+es el orden en que se van a llamar a las funciones de los operadores. Por ejemplo la multiplicacion tiene prioridad antes que la suma.
 
-7- Apply
+6- Bind:
+Crea una nueva funcion que cuendo se manda a llamar tiene el contexto "this" asignado por nosotros.
 
-8- Promesas
+7- Apply:
+Funciona parecido al metodo bind, solo que recibe un array como segundo parametro.
 
-9- Recursividad
+8- Promesas:
+Es el posible resultado de una operacion que es asincronica.
+puede cumplirse o no, hay dos resultados posibles.
+
+9- Recursividad: 
+funcion que se llama a si misma hasta que ya no tiene que hacerlo.
